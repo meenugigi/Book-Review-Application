@@ -1,3 +1,18 @@
+Click here for demo video: https://youtu.be/g1mOF-fYXgY
+
+To run application:
+
+- open cmd
+- navigate to project folder (on cmd)
+- type 'set flask_app=login.py'
+- type 'py -m venv .'
+- type '.\Scripts\activate'
+- type 'set DATABASE_URL=postgres://fizarurozyjpdp:7d84df8f2660dda8f5a012db32a541fada530f2c0f02ca6cb1beb603145cf5f8@ec2-52-70-15-120.compute-1.amazonaws.com:5432/dcbkb030jbnk8c'
+- type 'flask run'
+
+
+
+
 set DATABASE_URL=postgres://fizarurozyjpdp:7d84df8f2660dda8f5a012db32a541fada530f2c0f02ca6cb1beb603145cf5f8@ec2-52-70-15-120.compute-1.amazonaws.com:5432/dcbkb030jbnk8c
 
 
@@ -36,4 +51,4 @@ searchbooks.html ---> contains html code that permits users to search for a book
 
 success.html ---> contains html code for page that appears on succesful login to the application.
 
-Project Demo Link: https://youtu.be/g1mOF-fYXgY
+
