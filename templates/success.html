@@ -1,0 +1,42 @@
+<html>  
+<head>  
+<title>Project1</title> 
+<link rel="stylesheet" href="{{url_for('static', filename ='style.css') }}">
+
+</head>  
+
+<style>
+.user {
+	font-size: 28px;
+	font-style: Calibri;
+	color: darkblue;
+	font-weight: bold;
+}
+</style>
+
+<body>  
+
+<div class = "heading">	
+	<h2>Welcome to Books World!</h2> <br></div>
+	<div class = "subhead" >
+	
+
+</div>
+
+
+<div class =user>
+<i>Welcome, {{ name }}! </i>
+</div>
+
+<div class =contents>
+   
+    <form action = "http://localhost:5000/searchbooks" >  
+		<br> <input type = "submit" value = "Search Books" class="link-btn">
+	</form>
+	<form action = "http://localhost:5000/logout"> 
+		<input type = "submit" value = "Logout" class="link-btn">
+	</form>
+</div>
+
+</body>  
+</html>  

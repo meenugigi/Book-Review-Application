@@ -1,0 +1,183 @@
+<html>  
+<head>  
+    <title>Project1</title>  
+   <link rel="stylesheet" href="{{url_for('static', filename ='style.css') }}">
+    <link
+      rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+   
+<style>
+	
+.submittedratings {
+	font-style: Calibri;
+	color: #80002a;
+}
+
+ .table {
+  border-collapse: collapse;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+
+
+.tab {
+	border-collapse: collapse;
+	
+}
+
+.booksdata, #booksdata {
+	margin-top: 4%;
+	margin-left: 5%;
+
+}
+
+.design {
+	font-size: 22px;
+	font-weight: bolder;
+
+}
+</style>
+</head>
+  
+<body> 
+<div class = "heading">	
+	<h2>Welcome to Books World!</h2> <br></div>
+	<div class = "subhead" >
+	
+
+</div>
+<div class="logout">
+	<div class = userdisplay>
+    <i>Logged in as {{ name }}</i></div>
+<form action = "http://localhost:5000/logout"> 
+        <input type = "submit" value = "Logout" class="link-btn">
+    </form>
+</div>
+<br>
+<div class= "booksdata">
+<h2>Book Details:</h2>
+{% for bookpages01 in bookpages01 %} </div>
+  
+ <table class= "table" border="1" align="center">
+	<tr><th class="cellhead">ISBN</th>
+	<th class="cellhead"> Book Title </th>
+	<th class="cellhead">Author</th>
+	<th class="cellhead">Publication Year</th></tr>
+	<tr><td class="cell"> {{ bookpages01.isbn }}</td>
+		<td class="cell"> {{ bookpages01.title}} </td>
+		<td class="cell"> {{ bookpages01.author }} </td>
+		<td class="cell"> {{ bookpages01.year }} </td></tr>
+</table>
+
+<br>
+<div class= "booksdata">
+<h2>Goodreads Review Data:</h2></div>
+
+<table>
+	<tr><td class="cellformat">Average Rating: {{  avgrating }}</td>
+		<td class="cellformat">Review counts: {{  reviewscount }}</td>
+	</tr>
+</table>
+
+
+</ul><br>
+{% for yourrating in yourrating %}
+ 
+<div class =submittedratings>
+<h2> You already submitted a rating of {{ yourrating.ratings }} for this book! </h2>
+<h2> Your Review: {{ yourrating.reviews }}</h2>
+</div>
+{% endfor %}
+{% endfor %}
+
+   
+{% for bookpages in bookpages %}
+    <form method = "post" action = "{{url_for('reviewsubmit', book_isbn=bookpages.isbn)}}">  
+
+<table class="tab" border="1" align="center">
+	<tr><th class="cellhead">ISBN</th>
+	<th class="cellhead"> Book Title </th>
+	<th class="cellhead">Author</th>
+	<th class="cellhead">Publication Year</th></tr>
+	<tr><td class="cell"> {{ bookpages.isbn }}</td>
+		<td class="cell"> {{ bookpages.title}} </td>
+		<td class="cell"> {{ bookpages.author }} </td>
+		<td class="cell"> {{ bookpages.year }} </td></tr>
+</table>
+
+
+<div class= "booksdata" id="booksdata">
+<h2>Goodreads Review Data:</h2></div>
+
+<table>
+	<tr><td class="cellformat">Average Rating: {{  avgrating }}</td> 
+		<td class="cellformat">Review counts: {{  reviewscount }}</td>
+	</tr>
+</table>
+
+<br>  
+
+<table>
+
+<tr><td class = "design">Rate this book:</td>
+	<td><div class="rate">
+    <input type="radio" id="star5" name="ratings" value="5" />
+    <label for="star5" title="text">5 stars</label>
+    <input type="radio" id="star4" name="ratings" value="4" />
+    <label for="star4" title="text">4 stars</label>
+    <input type="radio" id="star3" name="ratings" value="3" />
+    <label for="star3" title="text">3 stars</label>
+    <input type="radio" id="star2" name="ratings" value="2" />
+    <label for="star2" title="text">2 stars</label>
+    <input type="radio" id="star1" name="ratings" value="1" />
+    <label for="star1" title="text">1 star</label>
+  </div>
+    </div></td>
+</tr>
+<tr><td class = "design">Leave a review:</td>
+	<td class = "design"><textarea name="reviews" class="textarea" placeholder="Comment Here"></textarea></td>
+	<td class = "design"><input type = "submit" class="link-btn" value = "Post"></td></tr></table>
+
+</form>
+{% endfor %}
+
+
+</body>
+</html>

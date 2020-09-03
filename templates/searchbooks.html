@@ -1,0 +1,41 @@
+<html>  
+<head>  
+    <title>Project1</title>  
+    <link rel="stylesheet" href="{{url_for('static', filename ='style.css') }}">
+<style>
+    
+</style>
+
+</head>  
+<body> 
+<div class = "heading"> 
+    <h2>Welcome to Books World!</h2> <br></div>
+    <div class = "subhead" >
+    
+
+</div>
+
+<div class="logout">
+    <div class = userdisplay>
+    <i>Logged in as {{ name }}</i></div>
+<form action = "http://localhost:5000/logout"> 
+        <input type = "submit" value = "Logout" class="link-btn">
+    </form>
+</div>
+
+<div class = contents>
+    <form method = "post" action = "http://localhost:5000/books">  
+        <table class="formclass">  
+           
+        	<tr><td>ISBN:</td><td class = tdclass><input type = 'text' name = 'isbn'></td></tr>  
+            <tr><td>Title:</td><td class = tdclass><input type = 'text' name = 'title'></td></tr>  
+            <tr><td>Author:</td><td class = tdclass><input type = 'text' name = 'author'></td></tr>                         
+        </table> <br>
+            <input type = "submit" class="link-btn" value = "Search Books">
+    </form> 
+
+</div> 
+
+
+</body>  
+</html>  

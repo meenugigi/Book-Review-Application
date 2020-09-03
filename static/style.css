@@ -1,0 +1,85 @@
+body {
+  background-color: #e6f2ff;
+}
+
+.heading {
+	color: white;
+	height: 100px;
+  font-size: 40px;
+  font-family: Times New Roman;
+  background-color: #001a33;
+  text-align: center; 
+}	
+
+
+.contents{
+	text-align: center;
+	margin-top: 8%;
+	background-color: #b3d9ff;
+	 margin-left: 37%;
+  width: 300px;
+  padding: 30px;
+  border-radius: 20px;
+ }  
+
+
+ .link-btn {
+        color: #fff;
+        background: #001a33;
+        display:inline-block;
+        border: 1px solid #2e6da4;        
+        font: bold 25px Arial, sans-serif;
+        text-decoration: none;
+        border-radius: 2px;
+        padding: 6px 20px;
+        text-align: center;
+        align-content: center;     
+    }
+    
+.link-btn:hover {
+        background-color: #245582;
+        border-color: #1a3e5b;
+    }
+
+.formclass {
+		font-size: 20px;
+		font-family: Calibri, Arial, sans-serif;
+		font-weight: bold;
+		
+	}
+
+.tdclass {
+		background-color: #004080;
+		height: 10px;
+	}
+
+.userdisplay {
+  font-size: 17px;
+  color: darkblue;
+}
+
+.cellhead {
+  width: 300px;
+  height: 40px;
+  font-size: 30px;
+
+}
+
+.cell {
+  width: 300px;
+height: 60px;
+color: #003366;
+font-size: 22px;
+font-style: Calibri, Arial;
+text-align: center;
+}
+
+.table {
+  border-collapse: collapse;
+}
+
+.cellformat {
+  color: #00264d;
+  font-size: 22px;
+  width: 300px;
+}

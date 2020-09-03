@@ -1,0 +1,59 @@
+<html>  
+<head>  
+    <title>Project1</title>  
+    <link rel="stylesheet" href="{{url_for('static', filename ='style.css') }}">
+<style>
+
+
+</style>
+
+
+
+</head>  
+<body> 
+<div class = "heading">	
+	<h2>Welcome to Books World!</h2> <br></div>
+	<div class = "subhead" >
+	
+
+</div>
+
+<div class="logout">
+	<div class = userdisplay>
+    <i>Logged in as {{ name }}</i></div>
+<form action = "http://localhost:5000/logout"> 
+        <input type = "submit" value = "Logout" class="link-btn">
+    </form>
+</div>
+
+<div class="booksdata">
+ <h2>Below is the list of matching search results</h2></div>
+{{ message }}
+
+
+
+
+<table align="center">
+	
+	<th class="cellhead"> ISBN </th>
+	<th class="cellhead">Book Title</th>
+	<th class="cellhead">Author</th>
+</table>
+{% for book in book %}
+
+
+
+<table class= "table" border="1" align="center">
+	<tr><td class="cell">{{ book.isbn }}</td>
+		<td class="cell"><a href="{{ url_for('bookpage', book_isbn=book.isbn) }}">{{ book.title}}</a></td>
+		<td class="cell">{{ book.author}}</td>
+	</tr>
+</table>
+
+
+  
+{% endfor %}
+
+
+</body>  
+</html>  

@@ -1,0 +1,41 @@
+<html>  
+<head>  
+    <title>Project1</title>  
+    <link rel="stylesheet" href="{{url_for('static', filename ='style.css') }}">
+
+</head>  
+<style> 
+    .message {
+  font-size: 25px;
+  color: red;
+}
+</style>
+<body>  
+	
+	
+<div class = "heading">	
+	<h2>Welcome to Books World!</h2> <br></div>
+	<div class = "subhead" >
+	
+
+</div>
+
+<div class="message">
+{{ messages }}
+	{{ display }}
+
+</div>
+
+<div class = contents>
+    <form method = "post" action = "http://localhost:5000/success">  
+        <table class="formclass">  
+            <tr><td>Username</td><td class = tdclass><input type = 'text' name = 'log_username' placeholder="Enter your Username" required="required"></td></tr>  
+            <tr><td>Password</td><td class = tdclass><input type = 'password' name = 'log_password' placeholder="Enter your Password" required="required"></td></tr> 
+             </table> <br>
+            <input type = "submit" class="link-btn" value = "Login"> 
+           
+         
+    </form>  
+</div>
+</body>  
+</html>  
